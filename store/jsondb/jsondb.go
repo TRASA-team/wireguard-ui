@@ -234,7 +234,7 @@ func (o *JsonDB) GetClients(hasQRCode bool) ([]model.ClientData, error) {
 
 		// get client info
 		if err := json.Unmarshal([]byte(f), &client); err != nil {
-			return clients, fmt.Errorf("cannot decode client json structure: %v", err)
+			return clients, fmt.Errorf("cannot decode client json structure: %v", f)
 		}
 
 		// generate client qrcode image in base64
